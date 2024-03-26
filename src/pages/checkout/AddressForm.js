@@ -21,12 +21,7 @@ const top100Films = [
 
 function FullWidthTextField() {
   return (
-    <Grid
-      container
-      direction="column"
-      alignItems="center"
-      justifyItems="center"
-    >
+    <Grid container direction="column" alignItems="center" justifyItems="center">
       <Box
         sx={{
           width: 500,
@@ -54,9 +49,7 @@ function ComboBox() {
           id="combo-box-demo"
           options={top100Films}
           sx={{ width: 500 }}
-          renderInput={(params) => (
-            <TextField {...params} label="Elegir area" />
-          )}
+          renderInput={(params) => <TextField {...params} label="Elegir área" />}
         />
       </Grid>
     </Grid>
@@ -135,12 +128,7 @@ export default function AddressForm() {
           </Container>
         </Grid>
         <Grid item xs={12}>
-          <FormControlLabel
-            control={
-              <Checkbox color="secondary" name="saveAddress" value="yes" />
-            }
-            label="Use this address for payment details"
-          />
+          <FormControlLabel control={<Checkbox color="secondary" name="saveAddress" value="yes" />} label="Use this address for payment details" />
         </Grid>
       </Grid>
     </React.Fragment>

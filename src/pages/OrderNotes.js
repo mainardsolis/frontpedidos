@@ -25,10 +25,7 @@ import MenuIcon from "@mui/icons-material/Menu";
 import ChevronLeftIcon from "@mui/icons-material/ChevronLeft";
 import NotificationsIcon from "@mui/icons-material/Notifications";
 
-import {
-  mainListItems,
-  secondaryListItems,
-} from "../pages/dashboard/listItems";
+import { mainListItems, secondaryListItems } from "../pages/dashboard/listItems";
 import { styled, createTheme, ThemeProvider } from "@mui/material/styles";
 
 function Copyright() {
@@ -108,7 +105,7 @@ export default function CheckoutWithNav() {
     setActiveStep((prevActiveStep) => prevActiveStep - 1);
   };
 
-  const steps = ["Shipping address", "Payment details", "Review your order"];
+  const steps = ["Datos de la nota", "Cargar nota", "Resumen"];
 
   function getStepContent(step) {
     switch (step) {
@@ -138,13 +135,7 @@ export default function CheckoutWithNav() {
             >
               <MenuIcon />
             </IconButton>
-            <Typography
-              component="h1"
-              variant="h6"
-              color="inherit"
-              noWrap
-              sx={{ flexGrow: 1 }}
-            >
+            <Typography component="h1" variant="h6" color="inherit" noWrap sx={{ flexGrow: 1 }}>
               Dashboard
             </Typography>
             <IconButton color="inherit">
@@ -175,12 +166,9 @@ export default function CheckoutWithNav() {
           </List>
         </Drawer>
         <Container component="main" maxWidth="sm" sx={{ mb: 4, marginTop: 6 }}>
-          <Paper
-            variant="outlined"
-            sx={{ my: { xs: 3, md: 6 }, p: { xs: 2, md: 3 } }}
-          >
+          <Paper variant="outlined" sx={{ my: { xs: 3, md: 6 }, p: { xs: 2, md: 3 } }}>
             <Typography component="h1" variant="h4" align="center">
-              Checkout
+              Nueva nota
             </Typography>
             <Stepper activeStep={activeStep} sx={{ pt: 3, pb: 5 }}>
               {steps.map((label) => (
@@ -195,10 +183,8 @@ export default function CheckoutWithNav() {
                   Tu nota fue creada con éxito!
                 </Typography>
                 <Typography variant="subtitle1">
-                  La nota de pedidos de Subsecretaria de Modernización con
-                  destino a Sala de Reuniones fue creada con éxito. Por favor,
-                  accede a "Mis Pedidos" para continuar con el proceso de
-                  documentación.
+                  La nota de pedidos de Subsecretaria de Modernización con destino a Sala de Reuniones fue creada con éxito. Por favor, accede a "Mis Pedidos"
+                  para continuar con el proceso de documentación.
                 </Typography>
               </React.Fragment>
             ) : (
@@ -210,14 +196,8 @@ export default function CheckoutWithNav() {
                       Back
                     </Button>
                   )}
-                  <Button
-                    variant="contained"
-                    onClick={handleNext}
-                    sx={{ mt: 3, ml: 1 }}
-                  >
-                    {activeStep === steps.length - 1
-                      ? "Crear Nota"
-                      : "Siguiente"}
+                  <Button variant="contained" onClick={handleNext} sx={{ mt: 3, ml: 1 }}>
+                    {activeStep === steps.length - 1 ? "Crear Nota" : "Siguiente"}
                   </Button>
                 </Box>
               </React.Fragment>

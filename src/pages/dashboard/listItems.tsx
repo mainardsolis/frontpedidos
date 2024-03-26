@@ -19,7 +19,7 @@ export const mainListItems = (
       <ListItemIcon>
         <ShoppingCartIcon />
       </ListItemIcon>
-      <Link to="muicard">Secretarias</Link>
+      <Link to="muicard">Secretarías</Link>
     </ListItemButton>
     <ListItemButton onClick={() => navigate("ordernotes")}>
       <ListItemIcon>
@@ -31,7 +31,7 @@ export const mainListItems = (
       <ListItemIcon>
         <ShoppingCartIcon />
       </ListItemIcon>
-      <Link to="myorder">Detalles de Area</Link>
+      <Link to="myorder">Detalles de Área</Link>
     </ListItemButton>
     <ListItemButton>
       <ListItemIcon>

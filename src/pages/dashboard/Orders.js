@@ -1,11 +1,12 @@
-import * as React from 'react';
-import Link from '@mui/material/Link';
-import Table from '@mui/material/Table';
-import TableBody from '@mui/material/TableBody';
-import TableCell from '@mui/material/TableCell';
-import TableHead from '@mui/material/TableHead';
-import TableRow from '@mui/material/TableRow';
-import Title from './Title';
+import * as React from "react";
+import Link from "@mui/material/Link";
+import Table from "@mui/material/Table";
+import TableBody from "@mui/material/TableBody";
+import TableCell from "@mui/material/TableCell";
+import TableHead from "@mui/material/TableHead";
+import TableRow from "@mui/material/TableRow";
+import Title from "./Title";
+import { Box } from "@mui/material";
 
 // Generate Order Data
 function createData(id, date, name, shipTo, paymentMethod, suppliers, initialentryno, oc, payment, retired, amount) {
@@ -13,58 +14,59 @@ function createData(id, date, name, shipTo, paymentMethod, suppliers, initialent
 }
 
 const rows = [
-  createData(0,'16 Mar, 2019','Cables, Escaleras,...','Subsecretaria de Modernizacion','Tecnicos','Ferreteria la rural','1','1','NO','NO', 312.44,),
+  createData(0, "16 Mar, 2019", "Cables, Escaleras,...", "Subsecretaria de Modernizacion", "Tecnicos", "Ferreteria la rural", "1", "1", "NO", "NO", 312.44),
   createData(
     1,
-    '16 Mar, 2019',
-    'Camaras, Nvr,...',
-    'Subsecretaria de Modernizacion',
-    'Centro de Monitoreo',
-    '1816 Seguridad SRL',
-    '2',
-    '2',
-    'SI',
-    'SI',
-    866.99,
+    "16 Mar, 2019",
+    "Camaras, Nvr,...",
+    "Subsecretaria de Modernizacion",
+    "Centro de Monitoreo",
+    "1816 Seguridad SRL",
+    "2",
+    "2",
+    "SI",
+    "SI",
+    866.99
   ),
   createData(
     2,
-    '16 Mar, 2019',
-    'Servicio de Manteniemiento de sistema',
-    'Subsecretaria de Modernizacion',
-    'Tierras Fiscales',
-    'GURUDEV Logiudice Joaquin',
-    '3',
-    '3',
-    'NO',
-    'NO',
-    100.81),
+    "16 Mar, 2019",
+    "Servicio de Manteniemiento de sistema",
+    "Subsecretaria de Modernizacion",
+    "Tierras Fiscales",
+    "GURUDEV Logiudice Joaquin",
+    "3",
+    "3",
+    "NO",
+    "NO",
+    100.81
+  ),
 
   createData(
     3,
-    '16 Mar, 2019',
-    'Alarmas con control,...',
-    'Subsecretaria de Modernizacion',
-    'Alarmas Vecinales',
-    '1816 Seguridad SRL',
-    '4',
-    '4',
-    'NO',
-    'NO',
-    654.39,
+    "16 Mar, 2019",
+    "Alarmas con control,...",
+    "Subsecretaria de Modernizacion",
+    "Alarmas Vecinales",
+    "1816 Seguridad SRL",
+    "4",
+    "4",
+    "NO",
+    "NO",
+    654.39
   ),
   createData(
     4,
-    '15 Mar, 2019',
-    'Servicio de Tirada Ultima Milla',
-    'Subsecretaria de Modernizacion',
-    'Tendido de Fibra Optica',
-    'Rivero Gustavo Javier',
-    '5',
-    '5',
-    'PARCIALMENTE',
-    'NO',
-    212.79,
+    "15 Mar, 2019",
+    "Servicio de Tirada Ultima Milla",
+    "Subsecretaria de Modernizacion",
+    "Tendido de Fibra Optica",
+    "Rivero Gustavo Javier",
+    "5",
+    "5",
+    "PARCIALMENTE",
+    "NO",
+    212.79
   ),
 ];
 
@@ -74,14 +76,14 @@ function preventDefault(event) {
 
 export default function Orders() {
   return (
-    <React.Fragment>
+    <Box>
       <Title>Pedidos Realizados</Title>
-      <Table size="small">
+      <Table size="small" sx={{ mb: "1rem" }}>
         <TableHead>
           <TableRow>
             <TableCell>Fecha de creación</TableCell>
             <TableCell>Pedido Realizado</TableCell>
-            <TableCell>Area</TableCell>
+            <TableCell>Área</TableCell>
             <TableCell>Destino</TableCell>
             <TableCell>Proveedor</TableCell>
             <TableCell>Mesa de Entrada</TableCell>
@@ -108,9 +110,9 @@ export default function Orders() {
           ))}
         </TableBody>
       </Table>
-      <Link color="primary" href="#" onClick={preventDefault} sx={{ mt: 3 }}>
+      <Link color="primary" href="#" onClick={preventDefault}>
         Ver pedidos anteriores
       </Link>
-    </React.Fragment>
+    </Box>
   );
 }
